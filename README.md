@@ -5,3 +5,4 @@
 - [x] Linux fundamentals
 -[] Git and Github
 -[] Bash scripting
+-Docker
