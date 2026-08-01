@@ -31,4 +31,4 @@ will help me build reliable infrastructure for PBCA and beyond.
 - `linux-fundamentals/` - Notes, scripts and exercises from Linux module
 - `bash-scripting/` - Shell scripts I have written
 - `dotfiles/` - My personal terminal configuration files
-- `projects/` - Real world projects applying what I have learned
+- `projects/` - Real world projects applying what I have understood
