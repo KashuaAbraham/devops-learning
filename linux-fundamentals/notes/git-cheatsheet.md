@@ -72,3 +72,11 @@ git commit -m "resolve merge conflict in README"
 git checkout -- file.txt    # discard changes to a file
 git reset HEAD file.txt     # unstage a file
 git revert <hash>           # undo a commit safely
+## My Key Insights
+- git status is your best friend - run it constantly
+- ALWAYS git pull before starting work
+- Commit messages are communication to teammates and employers
+- Branches let teammates work without interfering with each other
+- Merge conflicts are not scary - read both versions and decide
+- The .git folder contains everything - never delete it manually
+- git push rejected means pull first - Git is protecting your work
