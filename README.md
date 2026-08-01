@@ -16,7 +16,7 @@ will help me build reliable infrastructure for PBCA and beyond.
 - Process management and systemd services
 - SSH and secure remote access
 - Vim, Tmux and terminal productivity
-- Git version control
+- Git version control and Github
 
 ## Learning Roadmap
 - [x] Linux Fundamentals
