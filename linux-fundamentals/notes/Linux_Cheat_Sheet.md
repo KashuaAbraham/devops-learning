@@ -190,9 +190,18 @@ Ctrl+R   Search command history
 Tab      Auto-complete
 ↑         Previous command
 ```
-## awk
-awk '{print $1}' data.txt   prints first column in the file data.txt
-awk $2>24 '{print $1}'data.txt  print the first column if condition is fulfiled
-awk -F : '{print $1}'   separate the columns using the delimeter : 
-awk NR      Count line number 
-awk NF      count number of fields 
+## Text Processing
+- `awk '{print $1}' file` - print first column
+- `awk -F: '{print $1}' /etc/passwd` - use : as delimiter
+- `awk 'NR==2 {print $5}' file` - process line 2 only, skip header
+- `NR` stands for Number of Record - tracks which line awk is reading
+## Exit Codes
+- `exit 0` - script finished successfully
+- `exit 1` - script stopped due to an error
+- `$?`     - holds exit code of last command (0=success, non-zero=failure)
+
+## When to use exit 1
+- When a required file or directory is missing
+- When script is not run as the correct user
+- When a critical command fails
+- Any time continuing would cause damage or data loss 
