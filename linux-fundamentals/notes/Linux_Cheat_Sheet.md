@@ -190,3 +190,9 @@ Ctrl+R   Search command history
 Tab      Auto-complete
 ↑         Previous command
 ```
+## awk
+awk '{print $1}' data.txt   prints first column in the file data.txt
+awk $2>24 '{print $1}'data.txt  print the first column if condition is fulfiled
+awk -F : '{print $1}'   separate the columns using the delimeter : 
+awk NR      Count line number 
+awk NF      count number of fields 
