@@ -61,11 +61,36 @@ cat << EOF> "$WEB_ROOT/index.html"
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WELCOME TO PBCA</title>
+	<title>WELCOME TO $SITE_NAME</title>
 </head>
 <body> 
-	<h1> Success ! my web root is set up. </h1>
+	<h1> Success ! $SITE_NAME is set up. </h1>
 </body>
 </html>
 EOF
 fi
+
+cat << EOF > /etc/nginx/sites-available/$SITE_NAME
+server {
+    listen 80;
+    server_name $SITE_NAME;
+    root $WEB_ROOT;
+    index index.html;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOF
+#LAYER 3: Enable the site
+ln -sf /etc/nginx/sites-available/$SITE_NAME /etc/nginx/sites-enabled/$SITE_NAME
+
+echo "Testing nginx configuration..."
+nginx -t
+
+echo "Reloading nginx..."
+systemctl reload nginx
+
+#LAYER 4: Confirm
+echo "Site $SITE_NAME is live at http://$SITE_NAME"
+echo "Web root: $WEB_ROOT"
